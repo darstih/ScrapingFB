@@ -39,11 +39,11 @@ El texto que captura que contenga comas y/o saltos de linea serán reemplazadas 
 
 
 ### Ejemplo
-usuario = user
-password = password
-iteraciones = 10000
-id_grupo = 1
-archivo final = publicaciones.csv
+- usuario = user
+- password = password
+- iteraciones = 10000
+- id_grupo = 1
+- archivo final = publicaciones.csv
 ```
 extraer_publicaciones_grupo_privado(user = 'user',pwd='password',iteraciones=10000,id_grupo="149144201830763",archivo_final='publicaciones.csv',archivo_proceso='datosproceso.txt')
 ```
