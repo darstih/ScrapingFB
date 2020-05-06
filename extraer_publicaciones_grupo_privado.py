@@ -119,7 +119,7 @@ def extraer_publicaciones_grupo_privado(user,pwd,iteraciones,archivo_final,id_gr
              
         siguiente_pagina = driver.find_element_by_xpath('/html/body/div/div/div[2]/div/div[1]/div[4]/div/a').get_attribute('href')
         driver.get(siguiente_pagina)
-        sleep(random.uniform(2.,4.))
+        sleep(random.uniform(0.,0.))
 
     #Se captura la ultima pagina y sus parametros
     capturarDatos()
