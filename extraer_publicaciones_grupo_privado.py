@@ -88,6 +88,7 @@ def extraer_publicaciones_grupo_privado(user,pwd,iteraciones,archivo_final,id_gr
             l = '0'
         #Escritura de los datos
         #Para minimizar el uso de memoria abrimos y cerramos en cada pagina cargada el documento
+        #Evitar el borrado de información si ocurre un error
         f = open(archivo_final, 'a')
         if autor is not None:
             if mostrar_autor:
