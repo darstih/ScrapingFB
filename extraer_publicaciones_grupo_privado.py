@@ -44,6 +44,7 @@ def extraer_publicaciones_grupo_privado(user,pwd,iteraciones,archivo_final,id_gr
             texto = k.find_element_by_xpath('.//div/div').text
             texto = texto.replace('\n', "<enter>")
             texto = texto.replace(',', " <coma>")
+            texto = texto.replace(';', "<pcoma>")
         except:
             texto = ""
         #Extracción de imagen o recurso
@@ -52,8 +53,10 @@ def extraer_publicaciones_grupo_privado(user,pwd,iteraciones,archivo_final,id_gr
             imagen_content = imagen.get_attribute('alt')
             imagen = imagen.get_attribute('src')
             imagen = imagen.replace('\n', "<enter>")
+            imagen = imagen.replace(';', "<pcoma>")
             imagen = imagen.replace(',', " <coma>")
             imagen_content = imagen_content.replace('\n', "<enter>")
+            imagen_content = imagen_content.replace(';', "<pcoma>")
             imagen_content = imagen_content.replace(',', " <coma>")
         except:
             imagen = ""
@@ -120,7 +123,7 @@ def extraer_publicaciones_grupo_privado(user,pwd,iteraciones,archivo_final,id_gr
              
         siguiente_pagina = driver.find_element_by_xpath('/html/body/div/div/div[2]/div/div[1]/div[4]/div/a').get_attribute('href')
         driver.get(siguiente_pagina)
-        sleep(random.uniform(0.,0.))
+        sleep(random.uniform(0.,2.))
 
     #Se captura la ultima pagina y sus parametros
     capturarDatos()
